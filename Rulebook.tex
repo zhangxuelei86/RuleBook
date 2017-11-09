@@ -128,15 +128,12 @@
 \label{chap:stage_I}
 
 \begin{itshape}
-\iterm{Stage~I} comprehends five \textbf{ability tests} and an \textbf{integration test} along with an open demonstration for the audience. 
-Each ability test is designed to evaluate the average performance of the robot in one particular skill, providing data for benchmarking. 
-Meanwhile, the integration test has been designed to evaluate how this abilities work together while solving a common task.
+\iterm{Stage~I} is built around the demonstrations of key concepts detailed in this chapter, each in its own section. Each key concept is designed to evaluate the performance of the robot in one particular skill, providing data for benchmarking. 
 
-The total score for ability and integration tests is the average of the best two performances out of preferably three performances (given the time constraints of a competition).
-The point of this is the both elimate good and bad luck for the robots/teams and to get a more objective view of the performance, 
-  not to give teams time to tweak the robot between test performances. 
-
-\iterm{Following and Guiding} (demonstration for the audience) goes out of the arena and into the venue between the audience. 
+The total score for \iterm{Stage~I} is the sum of the scores of all the demonstrations provided by the teams.
+The number of demonstrations per team will be preferably three, which could be changed given the time constraints of the competition.
+The point of having several demonstrations is both to eliminate good and bad luck for the robots/teams and to get a more objective view of the performance,
+not to give teams time to tweak the robot between test performances. 
 
 \end{itshape}
 
@@ -151,20 +148,42 @@ When commanded to start, the robot must move automatically beyond this point.
 Robot should be ready to start the next attempt to the same test as fast as possible: 
   when the performing robot is done with a attempt, the next robot must be ready to go with the start of a button or a voice command.
 
-\newpage
-\input{tests/CocktailParty}
+\subsection*{Scoring}
+%difficulty score should be between: 30 and 70
+The overall score of a demonstration is the sum of two scores: Difficulty (D) and Execution (E).
+
+Each demonstration can present up to 3 key concepts. Each key concept bears a difficulty which is awarded to the team if demonstrated succesfully. The sum of all the scores of succesfully demonstrated key concepts provides the overall Difficulty score (D) of the demonstration.
+
+In addition, the Execution score (E) is an objective evaluation of the overall demonstration. It implements several additional points to encourage behaviors the TC/EC expects from robots, as well as disencourage point-abusing tactics.
+
+Thus, the overall score of a demonstration is $D+E$.
 
 \newpage
-\input{tests/GPSR}
+\section{Execution Score}
+
+The Execution score (E) is calculated by $50 - P$, where $P$ is the sum of all accumulated penalties, listed below:
+
+\begin{itemize}
+	\item Missing key concepts:
+    \begin{itemize}
+	    \item No missing key concepts: 0
+	    \item 1 missing key concept: 10
+	    \item 2 missing key concepts: 25
+	    \item 2 missing key concepts: 50
+    \end{itemize}
+	\item Key concept was shown before: $D_i (1 - \gamma^N_i)$, where $D_i$ is the Difficulty score of the $i$ key concept shown before, $N_i$ is the number of times the $i$ key concept has been demonstrated before by the same team, and $\gamma = 0.9$.
+	\item No moderator explaining: 10.
+	\item Inactivity from the robot: $5T$ where $T$ is the number of minutes the robot is not doing anything.
+\end{itemize}
 
 \newpage
-\input{tests/HelpMeCarry}
-
-\newpage
-\input{tests/SPR}
-
-\newpage
-\input{tests/StoringGroceries}
+\input{keyconcepts/Audition}
+\input{keyconcepts/ComplexAudition}
+\input{keyconcepts/Manipulation}
+\input{keyconcepts/ComplexManipulation}
+\input{keyconcepts/Navigation}
+\input{keyconcepts/ObjectRecognition}
+\input{keyconcepts/ComplexObjectRecognition}
 
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
