@@ -1,0 +1,94 @@
+\section{Imitation}
+
+In this test we evaluate the ability of a robot to learn from human performance
+and therefore also advanced manipulation of objects like picking and placing as 
+well as advanced interaction between objects like pouring. The robot should 
+reason about what a person is doing with the objects it is interacting.
+
+For this task we expect all robot behaviours from Category 1 and Category 2 of
+the GPSR test. A person is executing a task, the robot should classify it by observation
+and be able to execute it afterwards by translating it into known behaviours that
+are performed during Stage 1 tests. Some manipulation actions also need to be
+added according to the limited set of actions of Stage 1.
+
+For that the robots needs to solve human-object relations and classify an action
+based on the observation.
+
+The task will be divided as follows:
+
+\begin{itemize}
+	\item Initial Scene Observation
+	\item Action Observation
+	\item Action Execution
+\end{itemize}
+
+
+\subsection{Focus}
+This test particularly focuses on the following aspects:
+\begin{itemize}
+	\item No predefined order of actions to carry out.
+	\item Action analysis and understanding.
+	\item Increased complexity and focus on action recognition and manipulation (unlike GPSR where focus is on speech recognition and speech understanding).
+	\item Environmental (high-level) reasoning.
+	\item Task execution.
+\end{itemize}
+
+\subsection{Task}
+
+\begin{enumerate}
+\item \textbf{Entering:} The robot enters the apartment to a predefined location 
+	and is positioned on the opposite site of a human demonstrator. After entering 
+	the robot could execute an initial scene analysis. All objects that are used 
+	during the performance are already placed on the table.
+
+	\item \textbf{Action observation:} The operator starts the learning phase 
+		by voice "Watch me now". The person then interacts with the objects. Potential
+		actions can be: \\
+		\begin{itemize}
+			\item Picking
+			\item Placing
+			\item Pouring
+			\item Stacking
+			\item ...
+		\end{itemize}
+
+	\item \textbf{Action classification:} The robot should announce by voice it just analysed
+		from the performance. Each task contains a sequence of three basic actions.
+
+	\item \textbf{Action execution:} Then the robot is triggered by voice "Perform what you just saw"
+		and tries to repeat the observed action. (The initial state will be recreated then (in terms of that 
+		the same objects are on the table, positions and order can vary.)
+
+\end{enumerate}
+
+\subsection{Additional rules and remarks}
+\label{sec:imitation_remarks}
+\begin{enumerate}
+	\item \textbf{Referees:} Since the score system in this test involves a 
+		subjective evaluation of the robot's behavior, the referees are EC/TC members.
+
+	\item \textbf{Operator:} The person operating the robot is one of the 
+		referees (default operator).
+
+	\item \textbf{Incremental scoring:} Scores will be awarded for the correct
+		announcement of the classified action including the interacting objects.
+		The actual execution of the correctly associated sequence of actions 
+		will be awarded. Each correct sub-action will be taken into account.
+\end{enumerate}
+
+\subsection{Referee and OC instructions}
+\textbf{2h before test:}
+\begin{itemize}
+	\item Specify objects, possible object affordances
+	\item initial location.
+\end{itemize}
+
+\newpage
+\subsection{Score sheet}
+
+%TODO (Raphael): Scoresheet
+%\input{scoresheets/imitation.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
